@@ -4,12 +4,25 @@
 #include <iostream>
 using namespace std;
 string a;
+string* adressA;
 
-int main(int argc, string* argv, string* arge)
+void Damage( const unsigned int a)
 {
+    cout << "zz" << endl;
+}
+
+
+int main()
+{
+    
     cout << "Hello World!\n";
-    cin.get >> a;
-    cout << a + 10;
+    cin >> a;
+    adressA = &a;
+    cout << a<< &a<<endl;
+    int u = 0;
+    Damage(u);
+
+    return 0;
 }
 
 // Exécuter le programme : Ctrl+F5 ou menu Déboguer > Exécuter sans débogage
