@@ -2,6 +2,8 @@
 //
 
 #include <iostream>
+#include <stdlib.h>
+
 using namespace std;
 string a;
 string* adressA;
@@ -10,18 +12,37 @@ void Damage( const unsigned int a)
 {
     cout << "zz" << endl;
 }
-
-
+void DeuxTirageAleatoire(int n)
+{
+    int total = 0;
+    srand(time(NULL));
+    n *= 10;
+    for (int i = 0; i < n; i++)
+    {
+        int firstDice = rand() % 6 + 1;
+        int secondDice = rand() % 6 + 1;
+        int sum = firstDice + secondDice;
+        cout << "Score " << sum<<"//";
+        total += sum; 
+    }
+    cout << "The average throw in " << n << " tries is " << (total / n)<<endl;
+}
 int main()
 {
     
-    cout << "Hello World!\n";
+    /*cout << "Hello World!\n";
     cin >> a;
     adressA = &a;
     cout << a<< &a<<endl;
     int u = 0;
-    Damage(u);
-
+    Damage(u);*/
+    cout << "Voulez vous jouer" << endl;
+    string u;
+    cin >> u;
+    cout << "Combien de tirage desirez vous" << endl;
+    int n;
+    cin >> n;
+    DeuxTirageAleatoire(n);
     return 0;
 }
 
